@@ -1,0 +1,9 @@
+{
+  "name": "Meroza Kitchen Demo by AJAYNXT",
+  "short_name": "Meroza Kitchen",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#F7F1E8",
+  "theme_color": "#7A2130",
+  "icons": []
+}

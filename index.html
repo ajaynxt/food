@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#7a2130">
+  <meta name="description" content="Meroza Kitchen is a fictional premium pure-vegetarian restaurant and food-ordering website demo by AJAYNXT.">
+  <meta name="author" content="Ajay Saini">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://food.ajaynxt.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Meroza Kitchen | AJAYNXT Food Website Demo">
+  <meta property="og:description" content="A complete fictional restaurant ordering, dine-in and catering experience designed by AJAYNXT.">
+  <meta property="og:url" content="https://food.ajaynxt.com/">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1600&q=88">
+  <title>Meroza Kitchen | Premium Food Ordering Demo by AJAYNXT</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {"@type":"Organization","@id":"https://ajaynxt.com/#org","name":"AJAYNXT","url":"https://ajaynxt.com/","telephone":"+91-99295-62585","email":"ajayx3neha@gmail.com","sameAs":["https://www.instagram.com/ajay_nxt_/"]},
+      {"@type":"Person","@id":"https://ajaynxt.com/#ajay","name":"Ajay Saini","jobTitle":"Website Designer and Developer","url":"https://ajaynxt.com/","worksFor":{"@id":"https://ajaynxt.com/#org"}},
+      {"@type":"WebSite","@id":"https://food.ajaynxt.com/#site","name":"Meroza Kitchen Demo","url":"https://food.ajaynxt.com/","creator":{"@id":"https://ajaynxt.com/#ajay"},"publisher":{"@id":"https://ajaynxt.com/#org"}}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="legal-strip" role="note">
+    <span>FICTIONAL PURE-VEGETARIAN RESTAURANT DEMO</span>
+    <strong>NO REAL FOOD ORDER OR RESERVATION</strong>
+    <a href="https://ajaynxt.com/" target="_blank" rel="noopener">DESIGNED BY AJAYNXT</a>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Meroza Kitchen home">
+      <img src="assets/logo.svg" width="46" height="46" alt="">
+      <span><b>MEROZA KITCHEN</b><small>PURE VEGETARIAN · FRESHLY PREPARED</small></span>
+    </a>
+
+    <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="mainNav">
+      <span></span><span></span><em>Menu</em>
+    </button>
+
+    <nav id="mainNav" aria-label="Primary">
+      <a href="#order">Order</a>
+      <a href="#offers">Offers</a>
+      <a href="#dine">Dine-in</a>
+      <a href="#catering">Catering</a>
+      <a href="#rewards">Rewards</a>
+      <a href="#locations">Locations</a>
+    </nav>
+
+    <button class="location-pill" id="locationButton" type="button">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6 7-12a7 7 0 1 0-14 0c0 6 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg>
+      <span><small>DELIVERING TO</small><b id="headerLocation">New Shimla</b></span>
+    </button>
+
+    <button class="cart-button" id="cartButton" type="button">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h2l2 11h10l3-8H6M9 20h.01M17 20h.01"/></svg>
+      <span>Cart</span><b id="cartCount">0</b>
+    </button>
+  </header>
+
+  <aside class="customizer" aria-label="Appearance controls">
+    <button class="customizer-toggle" id="customizerToggle" type="button" aria-expanded="false">
+      <svg viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h2M10 17h10M14 4v6M6 14v6"/></svg>
+      Customize
+    </button>
+    <div class="customizer-panel">
+      <header><div><small>AJAYNXT STYLE LAB</small><h2>Change the flavour.</h2></div><button id="customizerClose" type="button">×</button></header>
+      <section>
+        <div class="control-head"><h3>Colour</h3><span id="colourStatus">Auto · 3 sec</span></div>
+        <div class="swatches" id="themeSwatches"></div>
+        <div class="colour-inputs"><input id="customColour" type="color" value="#7a2130"><input id="customHex" type="text" value="#7A2130" maxlength="7"></div>
+        <button class="lock-control" id="lockColour" type="button"><span>Lock colour</span><b>Unlocked</b></button>
+      </section>
+      <section>
+        <div class="control-head"><h3>Heading font</h3><span id="fontStatus">Auto · 3 sec</span></div>
+        <select id="fontSelect">
+          <option value="Cormorant Garamond">Cormorant Garamond</option>
+          <option value="Playfair Display">Playfair Display</option>
+          <option value="Bodoni Moda">Bodoni Moda</option>
+          <option value="DM Serif Display">DM Serif Display</option>
+          <option value="Prata">Prata</option>
+          <option value="Manrope">Manrope</option>
+        </select>
+        <button class="lock-control" id="lockFont" type="button"><span>Lock font</span><b>Unlocked</b></button>
+      </section>
+      <section>
+        <div class="control-head"><h3>Appearance</h3><span id="modeStatus">Light</span></div>
+        <div class="mode-controls">
+          <button class="active" data-mode-value="light" type="button">Light</button>
+          <button data-mode-value="dark" type="button">Dark</button>
+          <button data-mode-value="system" type="button">System</button>
+        </div>
+      </section>
+      <button class="master-lock" id="lockBoth" type="button">Lock both</button>
+      <button class="reset-control" id="resetCustomizer" type="button">Reset auto mode</button>
+    </div>
+  </aside>
+
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="hero-bg"></div>
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="kicker light">PURE VEGETARIAN · DELIVERY · PICKUP · DINE-IN</p>
+        <h1>Good food,<br>minus the friction.</h1>
+        <p class="hero-lead">Choose your location, discover the menu, customise dishes and send a complete order enquiry in a few clean steps.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#order">Order food</a>
+          <button class="button ghost" type="button" data-open-table>Book a table</button>
+        </div>
+        <div class="hero-trust">
+          <span><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg>Pure veg menu</span>
+          <span><svg viewBox="0 0 24 24"><path d="M4 12h16M12 4v16"/></svg>Customisable dishes</span>
+          <span><svg viewBox="0 0 24 24"><path d="M4 8h16v10H4zM8 8V5h8v3"/></svg>Delivery or pickup</span>
+        </div>
+      </div>
+
+      <div class="order-launcher">
+        <div class="mode-switch">
+          <button class="active" data-order-mode="Delivery" type="button">Delivery</button>
+          <button data-order-mode="Pickup" type="button">Pickup</button>
+        </div>
+        <label>Location
+          <button class="field-button" id="heroLocationButton" type="button">
+            <svg viewBox="0 0 24 24"><path d="M12 21s7-6 7-12a7 7 0 1 0-14 0c0 6 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg>
+            <span><b id="heroLocation">New Shimla</b><small>Change address</small></span>
+            <em>›</em>
+          </button>
+        </label>
+        <label>Restaurant
+          <select id="heroBranch">
+            <option>Meroza Shimla</option>
+            <option>Meroza Jaipur</option>
+            <option>Meroza Gurugram</option>
+          </select>
+        </label>
+        <a href="#order">Browse menu</a>
+        <p>Demo estimate: 25–35 min · No real delivery</p>
+      </div>
+
+      <div class="hero-mini-card">
+        <span>Today’s demo favourite</span>
+        <b>Signature Paneer Platter</b>
+        <strong>₹449*</strong>
+      </div>
+    </section>
+
+    <section class="service-bar" aria-label="Highlights">
+      <article><svg viewBox="0 0 24 24"><path d="M3 7h18v11H3zM8 7V4h8v3"/></svg><div><b>Fast ordering flow</b><span>Location → menu → cart</span></div></article>
+      <article><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg><div><b>Pure-veg catalogue</b><span>Clearly marked dishes</span></div></article>
+      <article><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4zM7 10h10M7 14h6"/></svg><div><b>Transparent cart</b><span>Charges and coupon area</span></div></article>
+      <article><svg viewBox="0 0 24 24"><path d="M4 19h16M6 19c0-7 2-11 6-11s6 4 6 11M12 4v4"/></svg><div><b>Dine-in & catering</b><span>Separate enquiry flows</span></div></article>
+    </section>
+
+    <section class="section categories" aria-labelledby="categoryHeading">
+      <div class="section-head">
+        <div><p class="kicker">WHAT’S ON YOUR MIND?</p><h2 id="categoryHeading">Start with the craving.</h2></div>
+        <p>Tap a category to jump directly into the filtered menu.</p>
+      </div>
+      <div class="category-scroll">
+        <button type="button" data-category-jump="Bestseller"><span class="cat-photo c1"><img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=600&q=82" alt="" onerror="this.hidden=true"></span><b>Bestsellers</b></button>
+        <button type="button" data-category-jump="Thali"><span class="cat-photo c2"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=600&q=82" alt="" onerror="this.hidden=true"></span><b>Thali</b></button>
+        <button type="button" data-category-jump="North Indian"><span class="cat-photo c3"><img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=600&q=82" alt="" onerror="this.hidden=true"></span><b>North Indian</b></button>
+        <button type="button" data-category-jump="Street Food"><span class="cat-photo c4"><img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&w=600&q=82" alt="" onerror="this.hidden=true"></span><b>Street Food</b></button>
+        <button type="button" data-category-jump="Bakery"><span class="cat-photo c5"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=82" alt="" onerror="this.hidden=true"></span><b>Bakery</b></button>
+        <button type="button" data-category-jump="Dessert"><span class="cat-photo c6"><img src="https://images.unsplash.com/photo-1593701461250-d7b22dfd3a77?auto=format&fit=crop&w=600&q=82" alt="" onerror="this.hidden=true"></span><b>Desserts</b></button>
+      </div>
+    </section>
+
+    <section class="section offer-zone" id="offers">
+      <div class="section-head">
+        <div><p class="kicker">OFFERS & COMBOS</p><h2>More value, fewer taps.</h2></div>
+        <p>Clear savings, eligibility and one-tap bundle additions.</p>
+      </div>
+      <div class="offer-grid">
+        <article class="offer-card offer-a">
+          <div><span>FAMILY COMBO</span><h3>Four people.<br>One complete table.</h3><p>2 mains, dal, rice, breads, raita and dessert.</p><strong>₹1,299*</strong><button type="button" data-offer-add="family">Add combo</button></div>
+          <div class="offer-photo"><img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=86" alt="Vegetarian family meal" onerror="this.hidden=true"></div>
+        </article>
+        <article class="offer-card offer-b">
+          <div><span>PICKUP SPECIAL</span><h3>Collect it.<br>Keep 12%.</h3><p>Fictional saving applied on selected pickup orders.</p><strong>12% OFF*</strong><button type="button" data-offer-add="pickup">Use pickup offer</button></div>
+          <div class="offer-photo"><img src="https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=900&q=86" alt="Vegetarian kulcha plate" onerror="this.hidden=true"></div>
+        </article>
+        <article class="offer-card offer-c">
+          <div><span>SWEET ENDING</span><h3>Add dessert<br>without searching.</h3><p>Two fictional desserts added to eligible orders.</p><strong>₹249*</strong><button type="button" data-offer-add="sweet">Add desserts</button></div>
+          <div class="offer-photo"><img src="https://images.unsplash.com/photo-1593701461250-d7b22dfd3a77?auto=format&fit=crop&w=900&q=86" alt="Indian dessert" onerror="this.hidden=true"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="menu-shell" id="order">
+      <div class="menu-header">
+        <div>
+          <p class="kicker light">ORDER ONLINE · FICTIONAL MENU</p>
+          <h2>Build your meal.</h2>
+          <p>Everything below is vegetarian demo content. Images are illustrative.</p>
+        </div>
+        <div class="delivery-summary">
+          <span><b id="orderModeLabel">Delivery</b> to <strong id="menuLocation">New Shimla</strong></span>
+          <button type="button" id="menuLocationButton">Change</button>
+        </div>
+      </div>
+
+      <div class="sticky-menu-tools">
+        <label class="search-box">
+          <svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>
+          <input id="dishSearch" type="search" placeholder="Search dishes, categories or tags">
+        </label>
+        <div class="menu-filter-row" id="menuFilters">
+          <button class="active" data-menu-filter="All" type="button">All</button>
+          <button data-menu-filter="Bestseller" type="button">Bestsellers</button>
+          <button data-menu-filter="North Indian" type="button">North Indian</button>
+          <button data-menu-filter="Street Food" type="button">Street Food</button>
+          <button data-menu-filter="Thali" type="button">Thali</button>
+          <button data-menu-filter="Bakery" type="button">Bakery</button>
+          <button data-menu-filter="Dessert" type="button">Desserts</button>
+        </div>
+        <select id="dishSort" aria-label="Sort menu">
+          <option value="featured">Featured</option>
+          <option value="low">Price low to high</option>
+          <option value="high">Price high to low</option>
+          <option value="name">Name A–Z</option>
+        </select>
+      </div>
+
+      <div class="menu-content">
+        <aside class="category-rail" aria-label="Menu categories">
+          <button class="active" data-menu-filter="All" type="button"><span>All dishes</span><b>12</b></button>
+          <button data-menu-filter="Bestseller" type="button"><span>Bestsellers</span><b>5</b></button>
+          <button data-menu-filter="North Indian" type="button"><span>North Indian</span><b>4</b></button>
+          <button data-menu-filter="Street Food" type="button"><span>Street Food</span><b>2</b></button>
+          <button data-menu-filter="Thali" type="button"><span>Thali & Meals</span><b>2</b></button>
+          <button data-menu-filter="Bakery" type="button"><span>Bakery</span><b>2</b></button>
+          <button data-menu-filter="Dessert" type="button"><span>Desserts</span><b>2</b></button>
+        </aside>
+
+        <div>
+          <div class="menu-status"><span id="menuCount">12 dishes</span><small>All prices are fictional</small></div>
+          <div class="dish-grid" id="dishGrid">
+            <article class="dish-card" data-dish-id="d1" data-category="North Indian" data-badge="Bestseller" data-price="349" data-name="Paneer Tikka Masala" data-search="paneer tikka masala north indian bestseller medium spice cashew gravy">
+              <div class="dish-photo fallback-red"><img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=1000&q=86" alt="Paneer tikka masala" onerror="this.hidden=true"><span class="badge">Bestseller</span><i class="veg-dot"></i></div>
+              <div class="dish-info"><div class="dish-topline"><span>North Indian</span><b>★ 4.8*</b></div><h3>Paneer Tikka Masala</h3><p>Smoky paneer in a fictional tomato-cashew gravy.</p><div class="tag-row"><span>Medium spice</span><span>Customisable</span></div><div class="dish-bottom"><strong>₹349*<small>Serves 2</small></strong><div><button class="details" data-view-dish="d1" type="button">Details</button><button class="add" data-add-dish="d1" type="button">Add +</button></div></div></div>
+            </article>
+
+            <article class="dish-card" data-dish-id="d2" data-category="North Indian" data-badge="Bestseller" data-price="269" data-name="Dal Makhani" data-search="dal makhani north indian bestseller slow cooked comfort">
+              <div class="dish-photo fallback-brown"><img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=1000&q=86" alt="Dal makhani" onerror="this.hidden=true"><span class="badge">Bestseller</span><i class="veg-dot"></i></div>
+              <div class="dish-info"><div class="dish-topline"><span>North Indian</span><b>★ 4.7*</b></div><h3>Dal Makhani</h3><p>Fictional slow-cooked black lentils with a silky finish.</p><div class="tag-row"><span>Mild</span><span>Comfort</span></div><div class="dish-bottom"><strong>₹269*<small>Serves 2</small></strong><div><button class="details" data-view-dish="d2" type="button">Details</button><button class="add" data-add-dish="d2" type="button">Add +</button></div></div></div>
+            </article>
+
+            <article class="dish-card" data-dish-id="d3" data-category="Street Food" data-badge="Popular" data-price="249" data-name="Amritsari Kulcha Plate" data-search="amritsari kulcha street food popular chana pickle">
+              <div class="dish-photo fallback-gold"><img src="https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=1000&q=86" alt="Amritsari kulcha plate" onerror="this.hidden=true"><span class="badge">Popular</span><i class="veg-dot"></i></div>
+              <div class="dish-info"><div class="dish-topline"><span>Street Food</span><b>★ 4.6*</b></div><h3>Amritsari Kulcha Plate</h3><p>Crisp stuffed kulcha, chana, chutney and pickle.</p><div class="tag-row"><span>Spiced</span><span>Complete plate</span></div><div class="dish-bottom"><strong>₹249*<small>1 plate</small></strong><div><button class="details" data-view-dish="d3" type="button">Details</button><button class="add" data-add-dish="d3" type="button">Add +</button></div></div></div>
+            </article>
+
+            <article class="dish-card" data-dish-id="d4" data-category="Thali" data-badge="Bestseller" data-price="449" data-name="Meroza Special Thali" data-search="meroza special thali bestseller paneer dal rice bread raita dessert">
+              <div class="dish-photo fallback-green"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=86" alt="Vegetarian special thali" onerror="this.hidden=true"><span class="badge">Bestseller</span><i class="veg-dot"></i></div>
+              <div class="dish-info"><div class="dish-topline"><span>Thali</span><b>★ 4.9*</b></div><h3>Meroza Special Thali</h3><p>Paneer, dal, rice, breads, raita, salad and dessert.</p><div class="tag-row"><span>Complete meal</span><span>Chef pick</span></div><div class="dish-bottom"><strong>₹449*<small>1 thali</small></strong><div><button class="details" data-view-dish="d4" type="button">Details</button><button class="add" data-add-dish="d4" type="button">Add +</button></div></div></div>
+            </article>
+
+            <article class="dish-card" data-dish-id="d5" data-category="Thali" data-badge="" data-price="229" data-name="Choley Rice Bowl" data-search="choley rice bowl thali meal mild quick">
+              <div class="dish-photo fallback-orange"><img src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=1000&q=86" alt="Choley rice bowl" onerror="this.hidden=true"><i class="veg-dot"></i></div>
+              <div class="dish-info"><div class="dish-topline"><span>Thali & Meals</span><b>★ 4.5*</b></div><h3>Choley Rice Bowl</h3><p>Fictional choley, basmati rice and cooling raita.</p><div class="tag-row"><span>Quick meal</span><span>Mild</span></div><div class="dish-bottom"><strong>₹229*<small>1 bowl</small></strong><div><button class="details" data-view-dish="d5" type="button">Details</button><button class="add" data-add-dish="d5" type="button">Add +</button></div></div></div>
+            </article>
+
+            <article class="dish-card" data-dish-id="d6" data-category="Street Food" data-badge="Popular" data-price="179" data-name="Dahi Papdi Chaat" data-search="dahi papdi chaat street food popular sweet tangy fresh">
+              <div class="dish-photo fallback-pink"><img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&w=1000&q=86" alt="Dahi papdi chaat" onerror="this.hidden=true"><span class="badge">Popular</span><i class="veg-dot"></i></div>
+              <div class="dish-info"><div class="dish-topline"><span>Street Food</span><b>★ 4.6*</b></div><h3>Dahi Papdi Chaat</h3><p>Crisp papdi, yoghurt and fictional house chutneys.</p><div class="tag-row"><span>Sweet & tangy</span><span>Fresh</span></div><div class="dish-bottom"><strong>₹179*<small>1 plate</small></strong><div><button class="details" data-view-dish="d6" type="button">Details</button><button class="add" data-add-dish="d6" type="button">Add +</button></div></div></div>
+            </article>
+
+            <article class="dish-card" data-dish-id="d7" data-category="Bakery" data-badge="New" data-price="159" data-name="Garlic Bread Basket" data-search="garlic bread bakery new cheesy baked">
+              <div class="dish-photo fallback-gold"><img src="https://images.unsplash.com/photo-1573140401552-3fab0b24306f?auto=format&fit=crop&w=1000&q=86" alt="Garlic bread basket" onerror="this.hidden=true"><span class="badge">New</span><i class="veg-dot"></i></div>
+              <div class="dish-info"><div class="dish-topline"><span>Bakery</span><b>★ 4.4*</b></div><h3>Garlic Bread Basket</h3><p>Warm fictional garlic breads with herb butter.</p><div class="tag-row"><span>Baked</span><span>Add-on</span></div><div class="dish-bottom"><strong>₹159*<small>6 pieces</small></strong><div><button class="details" data-view-dish="d7" type="button">Details</button><button class="add" data-add-dish="d7" type="button">Add +</button></div></div></div>
+            </article>
+
+            <article class="dish-card" data-dish-id="d8" data-category="Bakery" data-badge="" data-price="129" data-name="Chocolate Muffin Duo" data-search="chocolate muffin duo bakery sweet baked">
+              <div class="dish-photo fallback-brown"><img src="https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&w=1000&q=86" alt="Chocolate muffins" onerror="this.hidden=true"><i class="veg-dot"></i></div>
+              <div class="dish-info"><div class="dish-topline"><span>Bakery</span><b>★ 4.3*</b></div><h3>Chocolate Muffin Duo</h3><p>Two fictional soft chocolate muffins for a quick sweet add-on.</p><div class="tag-row"><span>Eggless demo</span><span>Sweet</span></div><div class="dish-bottom"><strong>₹129*<small>2 pieces</small></strong><div><button class="details" data-view-dish="d8" type="button">Details</button><button class="add" data-add-dish="d8" type="button">Add +</button></div></div></div>
+            </article>
+
+            <article class="dish-card" data-dish-id="d9" data-category="Dessert" data-badge="" data-price="129" data-name="Gulab Jamun Duo" data-search="gulab jamun duo dessert warm sweet">
+              <div class="dish-photo fallback-red"><img src="https://images.unsplash.com/photo-1593701461250-d7b22dfd3a77?auto=format&fit=crop&w=1000&q=86" alt="Gulab jamun" onerror="this.hidden=true"><i class="veg-dot"></i></div>
+              <div class="dish-info"><div class="dish-topline"><span>Dessert</span><b>★ 4.7*</b></div><h3>Gulab Jamun Duo</h3><p>Two warm fictional gulab jamuns in syrup.</p><div class="tag-row"><span>Warm</span><span>Sweet</span></div><div class="dish-bottom"><strong>₹129*<small>2 pieces</small></strong><div><button class="details" data-view-dish="d9" type="button">Details</button><button class="add" data-add-dish="d9" type="button">Add +</button></div></div></div>
+            </article>
+
+            <article class="dish-card" data-dish-id="d10" data-category="Dessert" data-badge="Bestseller" data-price="169" data-name="Kesar Rasmalai" data-search="kesar rasmalai dessert bestseller chilled saffron">
+              <div class="dish-photo fallback-cream"><img src="https://images.unsplash.com/photo-1601303516534-bf4e6c0030ae?auto=format&fit=crop&w=1000&q=86" alt="Kesar rasmalai" onerror="this.hidden=true"><span class="badge">Bestseller</span><i class="veg-dot"></i></div>
+              <div class="dish-info"><div class="dish-topline"><span>Dessert</span><b>★ 4.8*</b></div><h3>Kesar Rasmalai</h3><p>Chilled fictional rasmalai with saffron and pistachio cues.</p><div class="tag-row"><span>Chilled</span><span>Saffron</span></div><div class="dish-bottom"><strong>₹169*<small>2 pieces</small></strong><div><button class="details" data-view-dish="d10" type="button">Details</button><button class="add" data-add-dish="d10" type="button">Add +</button></div></div></div>
+            </article>
+
+            <article class="dish-card" data-dish-id="d11" data-category="North Indian" data-badge="" data-price="299" data-name="Kadhai Mushroom" data-search="kadhai mushroom north indian spicy capsicum">
+              <div class="dish-photo fallback-green"><img src="https://images.unsplash.com/photo-1601050690504-8d601d3a8e66?auto=format&fit=crop&w=1000&q=86" alt="Kadhai mushroom" onerror="this.hidden=true"><i class="veg-dot"></i></div>
+              <div class="dish-info"><div class="dish-topline"><span>North Indian</span><b>★ 4.4*</b></div><h3>Kadhai Mushroom</h3><p>Fictional mushrooms, peppers and roasted-spice gravy.</p><div class="tag-row"><span>Medium spice</span><span>Vegan option</span></div><div class="dish-bottom"><strong>₹299*<small>Serves 2</small></strong><div><button class="details" data-view-dish="d11" type="button">Details</button><button class="add" data-add-dish="d11" type="button">Add +</button></div></div></div>
+            </article>
+
+            <article class="dish-card" data-dish-id="d12" data-category="North Indian" data-badge="Bestseller" data-price="219" data-name="Jeera Rice and Raita" data-search="jeera rice raita north indian bestseller combo">
+              <div class="dish-photo fallback-cream"><img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=1000&q=86" alt="Jeera rice with raita" onerror="this.hidden=true"><span class="badge">Bestseller</span><i class="veg-dot"></i></div>
+              <div class="dish-info"><div class="dish-topline"><span>North Indian</span><b>★ 4.6*</b></div><h3>Jeera Rice & Raita</h3><p>Fictional fragrant rice and a cooling raita combo.</p><div class="tag-row"><span>Mild</span><span>Combo</span></div><div class="dish-bottom"><strong>₹219*<small>Serves 1–2</small></strong><div><button class="details" data-view-dish="d12" type="button">Details</button><button class="add" data-add-dish="d12" type="button">Add +</button></div></div></div>
+            </article>
+          </div>
+          <div class="empty-state" id="menuEmpty" hidden><h3>No dish found.</h3><p>Try another search or menu category.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dine-section" id="dine">
+      <div class="section-head">
+        <div><p class="kicker">DINE-IN</p><h2>Plan the table before the occasion.</h2></div>
+        <p>Separate paths for everyday dining, celebrations and larger groups.</p>
+      </div>
+      <div class="dine-layout">
+        <article class="dine-hero">
+          <div class="photo-fallback dining-photo"><img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1600&q=86" alt="Premium restaurant dining room" onerror="this.hidden=true"></div>
+          <div class="dine-overlay"><span>FAMILY DINING · DEMO</span><h3>The Meroza Dining Room</h3><p>Warm interiors, flexible group tables and celebration-ready service.</p><button type="button" data-open-table>Book a table</button></div>
+        </article>
+        <div class="dine-cards">
+          <article><span>01</span><h3>Everyday dining</h3><p>Choose branch, date, time and guest count.</p><button type="button" data-open-table>Reserve</button></article>
+          <article><span>02</span><h3>Birthday setup</h3><p>Add cake coordination and a celebration note.</p><button type="button" data-open-table>Plan birthday</button></article>
+          <article><span>03</span><h3>Group dining</h3><p>Pre-set menus and seating for larger parties.</p><button type="button" data-open-catering>Group enquiry</button></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="catering-section" id="catering">
+      <div class="catering-photo photo-fallback"><img src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1600&q=86" alt="Vegetarian catering buffet" onerror="this.hidden=true"></div>
+      <div class="catering-content">
+        <p class="kicker light">PARTY & CATERING</p>
+        <h2>From office lunches<br>to family functions.</h2>
+        <p>Capture the date, guest count, meal style, venue and service requirements before the sales call.</p>
+        <div class="catering-pills"><span>Corporate meals</span><span>Wedding functions</span><span>Birthday catering</span><span>Bulk sweet boxes</span></div>
+        <button class="button light" type="button" data-open-catering>Plan catering</button>
+      </div>
+    </section>
+
+    <section class="section reward-section" id="rewards">
+      <div class="section-head">
+        <div><p class="kicker">LOYALTY & REPEAT ORDERS</p><h2>Make the next order easier.</h2></div>
+        <p>Saved favourites, reward points, reorder and birthday benefits can improve retention.</p>
+      </div>
+      <div class="reward-layout">
+        <article class="reward-card">
+          <img src="assets/logo-light.svg" width="72" height="72" alt="">
+          <span>MEROZA CIRCLE · DEMO</span>
+          <strong>1,240</strong>
+          <small>Fictional points</small>
+          <div><b>Silver Leaf</b><p>Next reward at 1,500 points*</p></div>
+        </article>
+        <div class="reward-features">
+          <article><span>01</span><div><h3>Earn on direct orders</h3><p>Define points, exclusions and expiry clearly.</p></div></article>
+          <article><span>02</span><div><h3>Reorder favourites</h3><p>Bring previous orders back into cart in one tap.</p></div></article>
+          <article><span>03</span><div><h3>Use personal offers</h3><p>Show verified eligibility and offer validity.</p></div></article>
+          <button class="button primary" type="button" data-open-simple="loyalty">Discuss loyalty feature</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="track-section">
+      <div class="track-copy">
+        <p class="kicker light">ORDER TRACKING · CONCEPT</p>
+        <h2>Know what is happening after checkout.</h2>
+        <p>A real implementation can connect order states, preparation time, delivery partner details and support.</p>
+        <button class="button light" type="button" data-open-simple="tracking">Open tracking demo</button>
+      </div>
+      <div class="track-ui">
+        <div class="track-head"><img src="assets/logo.svg" width="48" height="48" alt=""><div><small>DEMO ORDER</small><b>MK-240731</b></div><span>25–35 min*</span></div>
+        <ol>
+          <li class="done"><i></i><div><b>Order received</b><span>09:42 PM</span></div></li>
+          <li class="done"><i></i><div><b>Kitchen accepted</b><span>09:44 PM</span></div></li>
+          <li class="active"><i></i><div><b>Being prepared</b><span>Estimated 12 min*</span></div></li>
+          <li><i></i><div><b>Out for delivery</b><span>Waiting</span></div></li>
+        </ol>
+        <p>No real order is being tracked.</p>
+      </div>
+    </section>
+
+    <section class="section locations-section" id="locations">
+      <div class="section-head">
+        <div><p class="kicker">LOCATIONS · FICTIONAL</p><h2>Choose the kitchen serving your area.</h2></div>
+        <p>Branch pages can control menus, availability, delivery zones, timing and contact details.</p>
+      </div>
+      <div class="locations-layout">
+        <div class="map-card">
+          <div class="map-grid"></div>
+          <span class="pin p1"><img src="assets/logo-light.svg" alt=""></span>
+          <span class="pin p2"><img src="assets/logo-light.svg" alt=""></span>
+          <span class="pin p3"><img src="assets/logo-light.svg" alt=""></span>
+          <small>FICTIONAL BRANCH MAP</small>
+        </div>
+        <div class="branch-list">
+          <label>Search branch<input id="branchSearch" type="search" placeholder="City or service"></label>
+          <article data-branch-search="shimla dine in bakery delivery"><div><small>HILL DINING</small><h3>Meroza Shimla</h3><p>Dine-in · Bakery · Delivery</p></div><button data-select-branch="Meroza Shimla" type="button">Select</button></article>
+          <article data-branch-search="jaipur flagship catering dine in"><div><small>FLAGSHIP DINING</small><h3>Meroza Jaipur</h3><p>Dine-in · Delivery · Catering</p></div><button data-select-branch="Meroza Jaipur" type="button">Select</button></article>
+          <article data-branch-search="gurugram pickup corporate delivery"><div><small>URBAN KITCHEN</small><h3>Meroza Gurugram</h3><p>Pickup · Delivery · Corporate Meals</p></div><button data-select-branch="Meroza Gurugram" type="button">Select</button></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section review-section">
+      <div class="section-head">
+        <div><p class="kicker">FICTIONAL UI REVIEWS</p><h2>Social proof, without pretending.</h2></div>
+        <p>These are design samples, not real customer feedback or food-quality evidence.</p>
+      </div>
+      <div class="review-grid">
+        <article><span>★★★★★</span><blockquote>“The menu feels fast to browse, and the cart explains what happens next.”</blockquote><p>Fictional portfolio review</p></article>
+        <article><span>★★★★★</span><blockquote>“Delivery, pickup, table booking and catering all feel like one brand.”</blockquote><p>Fictional portfolio review</p></article>
+        <article><span>★★★★★</span><blockquote>“Strong enough for a restaurant, flexible enough for a bakery or cloud kitchen.”</blockquote><p>Fictional portfolio review</p></article>
+      </div>
+    </section>
+
+    <section class="section faq-section">
+      <div class="faq-title"><p class="kicker">FREQUENT QUESTIONS</p><h2>Clear before the customer taps order.</h2></div>
+      <div class="faq-list">
+        <article><button type="button" aria-expanded="false"><span>Can I order real food from this website?</span><b>+</b></button><div><p>No. Meroza Kitchen and every dish, price, branch, offer and order status are fictional portfolio content.</p></div></article>
+        <article><button type="button" aria-expanded="false"><span>Can the final website accept online payment?</span><b>+</b></button><div><p>Yes. A client build can connect supported payment gateways, taxes, delivery charges and order management.</p></div></article>
+        <article><button type="button" aria-expanded="false"><span>Can each branch have separate stock and pricing?</span><b>+</b></button><div><p>Yes. Branch-specific menus, availability, delivery zones, timings and offers can be managed through a suitable backend.</p></div></article>
+        <article><button type="button" aria-expanded="false"><span>Can this be converted for a café, bakery or sweets brand?</span><b>+</b></button><div><p>Yes. The design and ordering engine can be adapted for many food-business categories.</p></div></article>
+      </div>
+    </section>
+
+    <section class="project-cta">
+      <div class="cta-copy">
+        <p class="kicker light">DESIGNED BY AJAYNXT</p>
+        <h2>Need a food website that takes real orders?</h2>
+        <p>Restaurant, café, bakery, cloud kitchen, sweets or multi-branch food brand. Menu, cart, payments, delivery, table booking, catering, loyalty and admin panel can be connected.</p>
+        <div class="contact-cards">
+          <a href="tel:+919929562585"><small>CALL / WHATSAPP</small><b>+91 99295 62585</b></a>
+          <a href="mailto:ajayx3neha@gmail.com"><small>EMAIL</small><b>ajayx3neha@gmail.com</b></a>
+          <a href="https://www.instagram.com/ajay_nxt_/" target="_blank" rel="noopener"><small>INSTAGRAM</small><b>@ajay_nxt_</b></a>
+          <a href="https://ajaynxt.com/" target="_blank" rel="noopener"><small>PORTFOLIO</small><b>ajaynxt.com</b></a>
+        </div>
+      </div>
+      <form class="project-form" id="projectForm" novalidate>
+        <div><small>FOOD WEBSITE PROJECT</small><h3>Ask website price</h3><p>Details open in WhatsApp.</p></div>
+        <label>Full name<input name="name" required><span class="error"></span></label>
+        <label>Phone / WhatsApp<input name="phone" inputmode="tel" required><span class="error"></span></label>
+        <label>Restaurant / Brand<input name="business"></label>
+        <label>Website type<select name="type"><option>Restaurant Ordering Website</option><option>Café / Bakery Website</option><option>Cloud Kitchen Website</option><option>Sweets & Snacks Store</option><option>Multi-Branch Food Website</option><option>Food Website + Admin Panel</option></select></label>
+        <label class="wide">Requirement<textarea name="message" rows="5" placeholder="Menu, branches, delivery, payments, table booking, catering or admin panel"></textarea></label>
+        <button class="button gold wide" type="submit">Ask price on WhatsApp</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand"><img src="assets/logo-light.svg" width="60" height="60" alt=""><b>MEROZA KITCHEN</b><small>FICTIONAL PURE-VEGETARIAN FOOD WEBSITE</small></div>
+    <nav><b>EXPLORE</b><a href="#order">Order</a><a href="#offers">Offers</a><a href="#dine">Dine-in</a><a href="#catering">Catering</a><a href="#locations">Locations</a></nav>
+    <div><b>AJAYNXT</b><a href="https://ajaynxt.com/" target="_blank" rel="noopener">ajaynxt.com</a><a href="tel:+919929562585">+91 99295 62585</a><a href="mailto:ajayx3neha@gmail.com">ajayx3neha@gmail.com</a><a href="https://www.instagram.com/ajay_nxt_/" target="_blank" rel="noopener">@ajay_nxt_</a></div>
+    <p>This is an AJAYNXT portfolio demo. Brand, menu, prices, images, branches, offers, delivery estimates, table bookings, loyalty points and order status are fictional. No real order or reservation is confirmed.</p>
+  </footer>
+
+  <div class="mobile-bar">
+    <a href="#order">Menu</a>
+    <button data-open-table type="button">Table</button>
+    <button data-open-catering type="button">Catering</button>
+    <button id="mobileCartButton" type="button">Cart <span id="mobileCartCount">0</span></button>
+  </div>
+
+  <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-label="Shopping cart">
+    <header><div><small>DEMO ORDER</small><h2>Your cart</h2></div><button id="cartClose" type="button" aria-label="Close cart">×</button></header>
+    <div class="drawer-mode">
+      <div class="mode-switch">
+        <button class="active" data-order-mode="Delivery" type="button">Delivery</button>
+        <button data-order-mode="Pickup" type="button">Pickup</button>
+      </div>
+      <label>Branch<select id="cartBranch"><option>Meroza Shimla</option><option>Meroza Jaipur</option><option>Meroza Gurugram</option></select></label>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-empty" id="cartEmpty"><img src="assets/logo.svg" width="64" height="64" alt=""><h3>Your cart is empty.</h3><p>Add a fictional vegetarian dish to test the order journey.</p><a href="#order" id="emptyMenuLink">Browse menu</a></div>
+    <div class="recommendation" id="cartRecommendation">
+      <small>COMPLETE THE MEAL</small>
+      <article><div><b>Gulab Jamun Duo</b><span>₹129*</span></div><button data-add-dish="d9" type="button">Add +</button></article>
+    </div>
+    <div class="coupon-box">
+      <label>Coupon<input id="couponInput" type="text" placeholder="Try MEROZA100"></label>
+      <button id="applyCoupon" type="button">Apply</button>
+      <p id="couponMessage"></p>
+    </div>
+    <div class="charge-breakdown">
+      <article><span>Item subtotal</span><b id="itemSubtotal">₹0</b></article>
+      <article><span>Packaging demo</span><b id="packagingCharge">₹0</b></article>
+      <article><span>Delivery demo</span><b id="deliveryCharge">₹0</b></article>
+      <article class="discount-row"><span>Coupon discount</span><b id="couponDiscount">− ₹0</b></article>
+      <article class="total-row"><span>Total payable*</span><b id="cartTotal">₹0</b></article>
+      <p>*Illustrative only. No payment is collected.</p>
+    </div>
+    <footer><button class="button primary" id="checkoutButton" type="button" disabled>Send order enquiry on WhatsApp</button></footer>
+  </aside>
+
+  <dialog class="dish-dialog" id="dishDialog">
+    <button class="dialog-close" id="dishDialogClose" type="button">×</button>
+    <div class="dialog-photo" id="dialogPhoto"></div>
+    <div class="dialog-content">
+      <p class="kicker">DISH DETAIL · FICTIONAL</p>
+      <h2 id="dialogDishName">Dish name</h2>
+      <div class="dialog-meta"><span>PURE VEG</span><span id="dialogDishCategory"></span><span id="dialogDishPrice"></span></div>
+      <p id="dialogDishDescription"></p>
+      <fieldset><legend>Choose preparation</legend><label><input type="radio" name="prep" value="Regular" checked> Regular</label><label><input type="radio" name="prep" value="Less spicy"> Less spicy</label><label><input type="radio" name="prep" value="No onion & garlic"> No onion & garlic*</label></fieldset>
+      <fieldset><legend>Add-ons</legend><label><input type="checkbox" value="Butter Naan|49"> Butter naan +₹49*</label><label><input type="checkbox" value="Jeera Rice|99"> Jeera rice +₹99*</label><label><input type="checkbox" value="Raita|59"> Raita +₹59*</label></fieldset>
+      <label class="note-label">Kitchen note<textarea id="dishNote" rows="3" placeholder="Demo note, no real kitchen receives it"></textarea></label>
+      <button class="button primary" id="dialogAddButton" type="button">Add customised item</button>
+      <small>*Availability and ingredients require real-kitchen verification.</small>
+    </div>
+  </dialog>
+
+  <dialog class="form-dialog" id="formDialog">
+    <button class="dialog-close light-close" id="formDialogClose" type="button">×</button>
+    <div class="form-visual">
+      <img src="assets/logo-light.svg" width="72" height="72" alt="">
+      <small id="formVisualKicker">MEROZA · DEMO</small>
+      <h2 id="formVisualTitle">Plan your table.</h2>
+      <p id="formVisualText">This enquiry is sent to AJAYNXT, not a restaurant.</p>
+    </div>
+    <form id="bookingForm" novalidate>
+      <div class="form-title"><small id="bookingKicker">TABLE BOOKING · DEMO</small><h3 id="bookingTitle">Book a table</h3></div>
+      <input type="hidden" name="type" id="bookingType" value="Table Booking">
+      <label>Name<input name="name" required><span class="error"></span></label>
+      <label>Phone / WhatsApp<input name="phone" inputmode="tel" required><span class="error"></span></label>
+      <label>Date<input name="date" type="date" required><span class="error"></span></label>
+      <label>Time<select name="time"><option>12:30 PM</option><option>2:00 PM</option><option>7:00 PM</option><option>8:30 PM</option></select></label>
+      <label>Guests<input name="guests" type="number" min="1" max="500" value="2" inputmode="numeric"></label>
+      <label>Branch<select name="branch"><option>Meroza Shimla</option><option>Meroza Jaipur</option><option>Meroza Gurugram</option></select></label>
+      <label class="wide">Occasion / Requirement<textarea name="message" rows="4" placeholder="Birthday, corporate meal, guest count, venue or menu preference"></textarea></label>
+      <button class="button primary wide" type="submit">Send enquiry on WhatsApp</button>
+    </form>
+  </dialog>
+
+  <dialog class="location-dialog" id="locationDialog">
+    <button class="dialog-close" id="locationDialogClose" type="button">×</button>
+    <div class="location-dialog-content">
+      <img src="assets/logo.svg" width="68" height="68" alt="">
+      <p class="kicker">SELECT DELIVERY AREA · DEMO</p>
+      <h2>Where should the order go?</h2>
+      <label>Search locality<input id="locationSearchInput" type="search" placeholder="New Shimla, Jaipur, Gurugram..."></label>
+      <div class="location-options">
+        <button data-location-name="New Shimla" data-branch-name="Meroza Shimla" type="button"><b>New Shimla</b><span>Meroza Shimla · 25–35 min*</span></button>
+        <button data-location-name="BCS Market, Shimla" data-branch-name="Meroza Shimla" type="button"><b>BCS Market, Shimla</b><span>Meroza Shimla · 20–30 min*</span></button>
+        <button data-location-name="C-Scheme, Jaipur" data-branch-name="Meroza Jaipur" type="button"><b>C-Scheme, Jaipur</b><span>Meroza Jaipur · 30–40 min*</span></button>
+        <button data-location-name="Sector 54, Gurugram" data-branch-name="Meroza Gurugram" type="button"><b>Sector 54, Gurugram</b><span>Meroza Gurugram · 25–35 min*</span></button>
+      </div>
+      <p>*Fictional serviceability and timing.</p>
+    </div>
+  </dialog>
+
+  <dialog class="simple-dialog" id="simpleDialog">
+    <button class="dialog-close" id="simpleDialogClose" type="button">×</button>
+    <div><img src="assets/logo.svg" width="68" height="68" alt=""><p class="kicker" id="simpleKicker">MEROZA · DEMO</p><h2 id="simpleTitle">Feature concept.</h2><p id="simpleText"></p><a class="button primary" id="simpleLink" target="_blank" rel="noopener">Continue on WhatsApp</a></div>
+  </dialog>
+
+  <noscript><div class="noscript-note">JavaScript is disabled. All core sections and menu items remain visible, but cart, filters and forms need JavaScript.</div></noscript>
+</body>
+</html>
